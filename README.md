@@ -24,7 +24,7 @@ This extension provides a comprehensive set of blocks for controlling the Kiddo 
 
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * click on **New Project**
-* click on ** ➕Extensions** under the gearwheel menu
+* click on ** ➕Extensions** under the Block menu
 * 🔍 search for **https://github.com/edusharks/kiddo_blocks** and import
 
 
