@@ -23,5 +23,9 @@
         "microbit"
     ],
     "preferredEditor": "tsprj",
-    "imageUrl": "icon.png"
+    "card": {
+        "name": "Reroute External I2C pins",
+        "imageUrl": "https://github.com/Edusharks/kiddo_blocks/blob/74df3863697af8842445e7cc9010252e07a3829a/icon.png",
+        "feedbackUrl": "https: //www.edusharks.com/"
+    }
 }
