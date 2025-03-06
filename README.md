@@ -24,7 +24,7 @@ This extension provides a comprehensive set of blocks for controlling the Kiddo 
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Pins](#pins)
-4. [Sensors](#sensors)
+4. [Sensors](#Line Follower)
 5. [Actuators](#actuators)
 6. [Examples](#examples)
 7. [License](#license)
