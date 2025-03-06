@@ -2,8 +2,6 @@
 > Open this page at [https://edusharks.github.io/kiddo_blocks/](https://edusharks.github.io/kiddo_blocks/)
 
 
-![](https://raw.githubusercontent.com/microbit-makecode-packages/APDS9930/master/icon.png)
-
 ## Use as Extension
 
 This repository can be added as an **extension** in MakeCode.
