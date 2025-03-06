@@ -3,8 +3,10 @@
 
 ![Kiddo Robot](https://raw.githubusercontent.com/Edusharks/kiddo_blocks/3849ef750b6cd30a110a30ad01959e1b838ea8ac/icon.png)
 
-A powerful MakeCode extension for controlling the **Kiddo Robot**, packed with blocks for motor control, sensor readings, IR remote functionality, and RGB LED effects.
+This extension provides a comprehensive set of blocks for controlling the Kiddo Robot, including sensors, actuators, and other utilities. It is designed to work with the MakeCode editor and supports various functionalities such as motor control, sensor reading, IR remote control, and RGB LED control.
 
+**Created by Edusharks**  
+[Website](https://www.edusharks.com/)
 ---
 
 ## 🚀 Features
@@ -176,5 +178,4 @@ Happy coding with **Kiddo Robot**! 🚀🤖
 ---
 
 Got any adjustments in mind or new features you want to highlight? Let us know! ✨
-
 
