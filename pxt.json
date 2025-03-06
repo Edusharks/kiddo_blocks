@@ -21,6 +21,7 @@
     "supportedTargets": [
         "microbit"
     ],
+    "preferredEditor": "tsprj",
     "imageUrl": "https://raw.githubusercontent.com/Edusharks/kiddo_blocks/main/icon.png",
     "card": {
         "name": "Kiddo Blocks",
