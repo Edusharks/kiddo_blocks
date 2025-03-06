@@ -23,10 +23,5 @@
         "microbit"
     ],
     "preferredEditor": "tsprj",
-    "icon": "https://raw.githubusercontent.com/Edusharks/kiddo_blocks/f8a8555aadd63ef7d9685d470c7e26a5f5a87a22/icon.png",
-    "card": {
-        "name": "Kiddo Blocks",
-        "imageUrl": "https://raw.githubusercontent.com/Edusharks/kiddo_blocks/f8a8555aadd63ef7d9685d470c7e26a5f5a87a22/icon.png",
-        "feedbackUrl": "https://www.edusharks.com/"
-    }
+    "icon": "https://raw.githubusercontent.com/Edusharks/kiddo_blocks/3849ef750b6cd30a110a30ad01959e1b838ea8ac/icon.png"
 }
