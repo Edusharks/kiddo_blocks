@@ -23,5 +23,5 @@
         "microbit"
     ],
     "preferredEditor": "tsprj",
-    "icon": "icon.png"
+    "imageUrl": "icon.png"
 }
