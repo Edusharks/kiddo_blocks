@@ -1,6 +1,7 @@
 
 > Open this page at [https://edusharks.github.io/kiddo_blocks/](https://edusharks.github.io/kiddo_blocks/)
 
+![](https://raw.githubusercontent.com/Edusharks/kiddo_blocks/3849ef750b6cd30a110a30ad01959e1b838ea8ac/icon.png)
 
 ## Use as Extension
 
