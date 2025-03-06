@@ -20,18 +20,8 @@ This extension provides a comprehensive set of blocks for controlling the Kiddo 
 
 ---
 
-## 📑 Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Pins](#pins)
-4. [Sensors](#Line Follower)
-5. [Actuators](#actuators)
-6. [Examples](#examples)
-7. [License](#license)
-
----
-
 ## 🛠️ Installation
+
 * open [https://makecode.microbit.org/](https://makecode.microbit.org/)
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
