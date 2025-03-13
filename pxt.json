@@ -1,6 +1,6 @@
 {
     "name": "Kiddo_Blocks",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "Custom blocks for Kiddo robot.",
     "license": "MIT",
     "dependencies": {
