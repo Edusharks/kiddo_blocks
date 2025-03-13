@@ -2,57 +2,8 @@
  * Custom blocks for Kiddo
  */
 const enum IrButton {
-    //% block="CH-"
-    CHreduce = 0xa2,
-    //% block="CH"
-    CH = 0x62,
-    //% block="CH+"
-    CHadd = 0xe2,
-    //% block="⏮"
-    Fastrewind = 0x22,
-    //% block="⏭"
-    Fastforward = 0x02,
-    //% block="⏯"
-    Play = 0xc2,
-    //% block="-"
-    Reduce = 0xe0,
-    //% block="+"
-    Add = 0xa8,
-    //% block="EQ"
-    EQ = 0x90,
-    //% block="0"
-    Number_0 = 0x68,
-    //% block="100+"
-    Number_100 = 0x98,
-    //% block="200+"
-    Number_200 = 0xb0,
-    //% block="1"
-    Number_1 = 0x30,
-    //% block="2"
-    Number_2 = 0x18,
-    //% block="3"
-    Number_3 = 0x7a,
-    //% block="4"
-    Number_4 = 0x10,
-    //% block="5"
-    Number_5 = 0x38,
-    //% block="6"
-    Number_6 = 0x5a,
-    //% block="7"
-    Number_7 = 0x42,
-    //% block="8"
-    Number_8 = 0x4a,
-    //% block="9"
-    Number_9 = 0x52,
     //% block="any"
     Any = -1,
-}
-
-const enum IrButtonAction {
-    //% block="pressed"
-    Pressed = 0,
-    //% block="released"
-    Released = 1,
 }
 
 //% weight=100 color=#993366 icon="\uf2db" block="Kiddo"
@@ -132,7 +83,7 @@ namespace KiddoRobot {
     //% blockId="analog_write"
     //% block="write analog pin %pin |to %value"
     //% value.min=0 value.max=1023
-    export function analogWrite(pin: AnalogPin, value: number): void {
+    export function analogWrite(pin: kiddoAnalogPin, value: number): void {
         pins.analogWritePin(pin, value);
     }
 
@@ -452,29 +403,6 @@ namespace KiddoRobot {
     }
 
     /**
-     * Do something when a specific button is pressed or released on the remote control.
-     * @param button the button to be checked
-     * @param action the trigger action
-     * @param handler body code to run when the event is raised
-     */
-    //% subcategory="Sensors"
-    //% group="IR Receiver"
-    //% blockId=kiddo_infrared_on_ir_button
-    //% block="on IR button | %button | %action"
-    //% button.fieldEditor="gridpicker"
-    //% button.fieldOptions.columns=3
-    //% button.fieldOptions.tooltips="false"
-    //% weight=50
-    export function onIrButton(button: IrButton, action: IrButtonAction, handler: () => void) {
-        initIrState();
-        if (action === IrButtonAction.Pressed) {
-            irState.onIrButtonPressed.push(new IrButtonHandler(button, handler));
-        } else {
-            irState.onIrButtonReleased.push(new IrButtonHandler(button, handler));
-        }
-    }
-
-    /**
      * Returns the code of the IR button that was pressed last. Returns -1 (IrButton.Any) if no button has been pressed yet.
      */
     //% subcategory="Sensors"
@@ -516,23 +444,6 @@ namespace KiddoRobot {
         basic.pause(0); // Yield to support background processing
         initIrState();
         return "0x" + ir_rec_to16BitHex(irState.addressSectionBits) + ir_rec_to16BitHex(irState.commandSectionBits);
-    }
-
-    /**
-     * Returns the command code of a specific IR button.
-     * @param button the button
-     */
-    //% subcategory="Sensors"
-    //% group="IR Receiver"
-    //% blockId=kiddo_infrared_button_code
-    //% button.fieldEditor="gridpicker"
-    //% button.fieldOptions.columns=3
-    //% button.fieldOptions.tooltips="false"
-    //% block="IR button code %button"
-    //% weight=60
-    export function irButtonCode(button: IrButton): number {
-        basic.pause(0); // Yield to support background processing
-        return button as number;
     }
 
     function ir_rec_to16BitHex(value: number): string {
@@ -775,8 +686,7 @@ namespace KiddoRobot {
 
     // Servo Motor
 
-    // Convert any DigitalPinPrime to a valid DigitalPin (for PWM control)
-    function getDigitalPin(pin: DigitalPin): DigitalPin {
+    function getDigitalPin(pin: kiddoDigitalPin): kiddoDigitalPin {
         // Return the pin directly (assuming it's a valid digital pin)
         return pin;
     }
@@ -808,7 +718,7 @@ namespace KiddoRobot {
     //% blockId="move_positional_servo"
     //% block="move servo on pin %pin|to position %position"
     //% position.min=0 position.max=180
-    export function movePositionalServo(pin: DigitalPin, position: number): void {
+    export function movePositionalServo(pin: kiddoDigitalPin, position: number): void {
         const angle = Math.clamp(0, 180, position);  // Ensure angle is within 0-180 range
         pins.servoWritePin(getDigitalPin(pin), angle);
     }
@@ -823,7 +733,7 @@ namespace KiddoRobot {
     //% group="Positional Servo"
     //% blockId="move_positional_servo_to_fixed_point"
     //% block="move servo on pin %pin|to position %position"
-    export function movePositionalServofixed(pin: DigitalPin, position: ServoPosition): void {
+    export function movePositionalServofixed(pin: kiddoDigitalPin, position: ServoPosition): void {
         // Using the ServoPosition enum, which already contains the angle values
         pins.servoWritePin(getDigitalPin(pin), position);  // position is directly the angle in degrees
     }
@@ -836,7 +746,7 @@ namespace KiddoRobot {
     //% from.min=0 from.max=180
     //% to.min=0 to.max=180
     //% duration.min=1 duration.max=10
-    export function moveServoFromTo1(pin: DigitalPin, from: number, to: number, duration: number): void {
+    export function moveServoFromTo1(pin: kiddoDigitalPin, from: number, to: number, duration: number): void {
         const startAngle = Math.clamp(0, 180, from);
         const endAngle = Math.clamp(0, 180, to);
         const steps = Math.abs(endAngle - startAngle);
@@ -873,7 +783,7 @@ namespace KiddoRobot {
     //% blockId="move_continuous_servo"
     //% block="set continuous servo on pin %pin|to speed %speed"
     //% speed.min=-100 speed.max=100
-    export function moveContinuousServo(pin: DigitalPin, speed: number): void {
+    export function moveContinuousServo(pin: kiddoDigitalPin, speed: number): void {
         const speedValue = Math.clamp(-100, 100, speed);  // Ensure speed is within -100 to 100 range
 
         // Map speed to the correct PWM values (using -100 for full reverse and 100 for full forward)
@@ -892,7 +802,7 @@ namespace KiddoRobot {
     //% group="Continuous Servo"
     //% blockId="stop_continuous_servo"
     //% block="stop continuous servo on pin %pin"
-    export function stopContinuousServo(pin: DigitalPin): void {
+    export function stopContinuousServo(pin: kiddoDigitalPin): void {
         // Set speed to 0 to stop the motor
         pins.servoWritePin(getDigitalPin(pin), 90);  // 90 typically stops a continuous servo
     }
