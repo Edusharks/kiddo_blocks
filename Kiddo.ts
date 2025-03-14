@@ -685,7 +685,7 @@ namespace KiddoRobot {
     ///////////////////////////////////////////////////////////////////////////////
 
     // Servo Motor
-
+    
     function getDigitalPin(pin: kiddoDigitalPin): kiddoDigitalPin {
         // Return the pin directly (assuming it's a valid digital pin)
         return pin;
