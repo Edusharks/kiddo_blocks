@@ -96,7 +96,7 @@ namespace KiddoRobot {
     //                           ACTUATORS SUB-CATEGORY
     //==========================================================================
     //-------------------------- DC Motors --------------------------
-    const R_PIN1 = DigitalPin.P14, R_PIN2 = DigitalPin.P13, L_PIN1 = DigitalPin.P15, L_PIN2 = DigitalPin.P16;
+    const R_PIN1 = DigitalPin.P14, R_PIN2 = DigitalPin.P13, L_PIN1 = DigitalPin.P16, L_PIN2 = DigitalPin.P15;
     //% subcategory="Actuators"
     //% group="Motors"
     //% block="run motor %motor %direction at speed %speed"
